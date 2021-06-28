@@ -1,4 +1,4 @@
-# Dev Squad 286 
+# Dev Squad 286
 
 ![alt text][welcome]
 
