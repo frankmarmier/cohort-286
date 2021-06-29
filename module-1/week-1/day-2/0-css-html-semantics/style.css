@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+#header {
+  background-color: red;
+  height: 70px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: dodgerblue;
+  /* margin-bottom: 10px; */
+
+  margin: 10px;
+  /* margin: 10px 20px; */
+  /* margin: 10px 20px 30px; */
+  /* margin: 10px 20px 30px 40px; */
+}
+
+.aside .title {
+  font-size: 2rem;
+  color: green;
+}
+
+.aside > .title {
+  color: blue;
+  font-size: 3rem;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.box2 {
+  /* height: calc(100% - 40px);
+  width: calc(100% - 40px); */
+  background-color: purple;
+  height: 100%;
+  width: 100%;
+  border: 20px solid red;
+  padding: 10px;
+}
+
+.block {
+  border: 1px solid black;
+}
+
+.inline {
+  border: 1px solid red;
+}
