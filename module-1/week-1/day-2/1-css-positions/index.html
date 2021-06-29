@@ -10,21 +10,30 @@
   <body>
     <header></header>
 
-    <aside class="fixed">
+    <!-- <aside class="fixed">
       <h2>Fixed</h2>
       <p>
         Elements positioned with the property fixed, will position themselves
         according to the viewport
       </p>
-    </aside>
+    </aside> -->
     <div class="grand-parent">
       <div class="parent">
         <div class="sticky">I am sticky !</div>
+        <p>
+          Elements positionned sticky will stay in the document flow <br />
+          Meaning that siblings / parents know the element exists
+        </p>
+        <p>Hey i know the sticky guy is here</p>
         <div class="wrapper relative">
           <p>I am the wrapper</p>
           <aside class="absolute">
             <h2>Absolute</h2>
             <p>I am absolute</p>
+            <p>
+              Elements positionned absolutely go out of the document flow <br />
+              Meaning that siblings / parents don't know it exists
+            </p>
           </aside>
         </div>
       </div>
