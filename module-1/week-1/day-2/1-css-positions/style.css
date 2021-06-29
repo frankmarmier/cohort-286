@@ -1,0 +1,63 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  height: 200vh;
+  background-color: dodgerblue;
+}
+
+.fixed {
+  position: fixed;
+  background-color: red;
+  /* z-index: ; */
+  /* bottom: 0;
+  right: 0; */
+  top: 0;
+  left: 0;
+}
+
+.absolute {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: green;
+}
+
+.wrapper {
+  background-color: purple;
+  z-index: -1;
+}
+
+.wrapper.relative {
+  /* position: static; */
+  /* position: absolute; */
+  position: relative;
+  top: 10px;
+  left: 100px;
+  bottom: 100px;
+
+  /* position: fixed; */
+}
+
+.parent {
+  height: 300px;
+  background-color: fuchsia;
+  width: 5000px;
+  /* position: relative; */
+}
+
+.grand-parent {
+  height: 600px;
+  width: 10000px;
+  background-color: aqua;
+  /* position: relative; */
+}
+
+.sticky {
+  position: sticky;
+  background-color: black;
+  color: white;
+  width: max-content;
+  top: 0;
+}
