@@ -41,6 +41,9 @@
   - Stackoverflow
   - Documentation websites
   - Google > stackoverflow > ask a question on #Hackoverflow > Ask the teacher
+  - Be ready to nose-bleed
+  - Wax on / Wax off 
+  - Don't forget to sleep
 
 ## Day planning
 
