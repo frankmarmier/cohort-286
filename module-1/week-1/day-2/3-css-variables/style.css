@@ -1,0 +1,14 @@
+:root {
+  --primary-color: red;
+  --nav-height: 70px;
+}
+
+h1 {
+  color: var(--primary-color);
+  /* color: dodgerblue; */
+}
+
+.main .paragraph {
+  color: var(--primary-color);
+  /* color: dodgerblue; */
+}
