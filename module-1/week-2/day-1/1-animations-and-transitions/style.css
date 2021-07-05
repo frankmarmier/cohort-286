@@ -1,0 +1,48 @@
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.box.transition {
+  background-color: dodgerblue;
+  font-size: 16px;
+  /* 
+  transition-property: background-color;
+  transition-duration: 4s;
+  transition-delay: 2s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+
+  /* transition: <property> <duration> <timing-function> <delay>; */
+  transition: background-color 4s cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
+
+  /* transition: background-color 4s cubic-bezier(0.075, 0.82, 0.165, 1) 5s,
+    font-size 3s cubic-bezier(0.075, 0.82, 0.165, 1); */
+}
+
+.box.transition:hover {
+  background-color: fuchsia;
+  /* font-size: 10px; */
+}
+
+.box.animated {
+  background-color: purple;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(300deg);
+  }
+
+  25% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
