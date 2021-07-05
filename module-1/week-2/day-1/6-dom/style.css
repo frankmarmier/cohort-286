@@ -1,0 +1,8 @@
+.student {
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.student.is-selected {
+  text-decoration: line-through;
+}
