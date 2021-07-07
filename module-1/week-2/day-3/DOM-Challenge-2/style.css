@@ -1,0 +1,17 @@
+#blocks {
+  display: flex;
+  max-width: 80vw;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+#blocks .block {
+  border: 2px solid;
+  height: 100px;
+  width: 100px;
+  margin: 0 10px 10px;
+}
+
+#blocks .block.is-selected {
+  border-color: dodgerblue;
+}
