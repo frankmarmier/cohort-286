@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+html {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.pokemon {
+  cursor: pointer;
+}
+
+.pokemon:hover {
+  color: dodgerblue;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex > * {
+  flex: 1;
+}

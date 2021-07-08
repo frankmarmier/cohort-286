@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>DOM Challenge 3</title>
+  </head>
+  <body>
+    <h1>Pokemons !</h1>
+    <hr />
+    <section>
+      <h2>Instructions</h2>
+      <p>
+        An array of pokemons will be provided <br />
+        We want to be able to display a list of pokemons and <br />
+        add a filter functionality in order to search for pokemons by their
+        names
+      </p>
+      <ol>
+        <li>Display the pokemons name on your page</li>
+        <li>Add an input with an id</li>
+        <li>Set an event handler on the input (oninput)</li>
+        <li>Get the input value and filter the pokemons</li>
+        <li>Display the filtered list on your page</li>
+      </ol>
+
+      <h3>BONUS</h3>
+      <p>
+        When you click on a pokemon you should be able to see <br />
+        the selected pokemon. Have a look at the find() method and
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes"
+          >data-attributes
+        </a>
+      </p>
+    </section>
+
+    <section id="solution">
+      <h2>Solution</h2>
+
+      <input id="input-filter-pokemon" type="text" placeholder="pokemon name" />
+
+      <div class="d-flex">
+        <ul id="pokemon-list"></ul>
+        <div id="selected-pokemon"></div>
+      </div>
+    </section>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
