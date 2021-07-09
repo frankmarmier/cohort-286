@@ -1,5 +1,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+// https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export
 import Shoe from "./Shoe.js";
 import {
   formatDate,
