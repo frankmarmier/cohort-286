@@ -10,6 +10,11 @@ cards.forEach((card) => {
 
     // console.log(card.querySelector(".title"));
 
+    /*
+        You can query elements (querySelector, getElem...) from a Node/HTMLElement
+        you don't have to have to go through document.
+        This will apply the selector from a specific node
+    */
     const title = card.querySelector(".title");
     title.style.color = "dodgerblue";
 
@@ -36,6 +41,11 @@ deleteButtons.forEach((btn) => {
 
     // console.log(btn.closest(".card"));
 
+    /*
+    You can target the closest parent from a child element
+    with the .closest() method
+    https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+    */
     const parentCard = btn.closest(".card");
 
     parentCard.remove();
