@@ -1,0 +1,26 @@
+
+    {{!-- {{#if isAdmin}}
+      <h2>Welcome Master !</h2>
+    {{/if}} --}}
+
+    {{#if isAdmin}}
+      <h2>Welcome Master !</h2>
+
+    {{else}}
+      <h2>Who are you ?!</h2>
+    {{/if}}
+
+    {{#unless shoes}}
+      <h2>Where are your shoes ?</h2>
+    {{/unless}}
+
+    <h1>Users page !</h1>
+    <ul>
+      {{#each users}}
+        {{!-- <li>Name: {{this.name}}, age: {{this.age}}</li> --}}
+
+       <li> {{> userCard this}}</li>
+
+      {{/each}}
+    </ul>
+
