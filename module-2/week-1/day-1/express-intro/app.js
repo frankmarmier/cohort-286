@@ -52,4 +52,9 @@ app.get("/contact", (req, res, next) => {
   res.render("contact.hbs");
 });
 
-app.listen(4000); // Expose our app on PORT 4000, allowing HTTP Requests
+app.listen(4000, () => {
+  console.log(`App listening on http://localhost:4000`);
+}); // Expose our app on PORT 4000, allowing HTTP Requests
+
+console.log("Hello where am i ?");
+console.log("I am logged server side ?");
