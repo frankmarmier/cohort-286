@@ -107,7 +107,7 @@ async function seedDatabase() {
     const updatedRecipe = await Recipe.findOneAndUpdate(
       { title: "Rigatoni alla Genovese" },
       { duration: 100 },
-      { useFindAndModify: false, new: true }
+      { useFindAndModify: false, new: true } // new true option passed in order to get the recent version of the document
     );
     console.log(updatedRecipe.duration);
 
