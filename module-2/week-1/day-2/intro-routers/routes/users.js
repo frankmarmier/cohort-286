@@ -11,7 +11,9 @@ const users = [
 
 // http://localhost:5000/users
 router.get("/", (req, res, next) => {
-  res.render("usersPage.hbs");
+  res.render("usersPage.hbs", {
+    stylesheets: ["users.css"],
+  });
 });
 
 //  http://localhost:5000/users/bobo
