@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const router = express.Router();
 
+// READ ALL
 router.get("/ducks", (req, res) => {
   console.log(req.query);
   //   res.send(req.query);
@@ -38,6 +39,7 @@ router.get("/ducks/create", (req, res) => {
   res.render("ducks/formDuck.hbs");
 });
 
+// CREATE !
 router.post("/ducks", (req, res) => {
   console.log("hello you are here");
   //   console.log(req.body);
@@ -60,6 +62,7 @@ router.post("/ducks", (req, res) => {
     });
 });
 
+// READ ONE
 router.get("/ducks/:id", (req, res) => {
   const isValid = mongoose.isValidObjectId(req.params.id);
 
