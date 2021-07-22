@@ -4,6 +4,13 @@
 
   <div>
     <label for="weight">Weight</label>
+    {{! Input names are mandatory here !
+        It is through your input names that 
+        the browser will build an object 
+        with key value pairs to your server
+        the key will be the input's name,
+        and the value will be what the user inserted in that input
+     }}
     <input type="number" id="weight" name="weight" placeholder="Weight" />
   </div>
   <div>
@@ -31,12 +38,22 @@
   <div>
     <label for="material">Is available</label>
     <select id="material" name="material">
+      {{! For the select, the value of the option
+        is what will be sent to the server
+        NOT the test, eg
+         <option value="VALUE">TEXT</option>
+         }}
       <option value="plastic">Plastic</option>
       <option value="gold">Gold</option>
       <option value="wood">Wood</option>
     </select>
   </div>
 
+  {{! The default type of a button in a form
+        is "submit"
+      A button with the submit type will trigger
+      the action of the form  
+      }}
   <button type="submit">Submit</button>
 
 </form>

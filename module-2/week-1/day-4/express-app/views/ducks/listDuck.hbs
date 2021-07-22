@@ -1,7 +1,25 @@
 <h1>List of Rubber ducks</h1>
 
+{{! The default method of a form
+  is GET
+  A form action with the GET verb will create
+  query parameters eg: ?foo=bar
+  With express you have access to the data through
+  req.query.
+  If your query parameters are ?"foo=bar"
+  express will build an object ressembling
+  {foo: "bar"} accessible @req.query
+
+ }}
+
 <form action="/ducks">
   <label for="search">Search</label>
+  {{! 
+    The query parameters will come from your 
+    input's name and the value the user inserted
+    in the case bellow it will build a query parameter
+    ressembling :  ?color=yellow
+   }}
   <input name="color" id="search" placeholder="Search a color.." />
   {{! <input name="brand" />
   <input name="material" /> }}
