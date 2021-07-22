@@ -24,7 +24,7 @@ const rubberDucks = [
     weight: 20,
     height: 40,
     job: "Hippie",
-    price: 100,
+    price: "FKPOIPDJPIDZJIPDZJIODJZIO",
     color: "brown",
     isAvailable: true,
     material: "wood",
@@ -33,10 +33,15 @@ const rubberDucks = [
 
 mongoose
   .connect("mongodb://localhost/ironhackers")
-  .then(() => {
+  .then(async () => {
+    await RubberDuck.deleteMany();
+
     RubberDuck.create(rubberDucks)
       .then((result) => {
         console.log(result);
+        // mongoose.connection.close().then(() => {
+        //   console.log("Connection closed");
+        // });
       })
       .catch((error) => {
         console.log(error);
