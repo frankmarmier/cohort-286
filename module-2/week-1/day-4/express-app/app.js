@@ -17,6 +17,11 @@ mongoose
 const baseRouter = require("./routes/baseRouter");
 const duckRouter = require("./routes/ducks");
 
+app.use(express.urlencoded({ extended: false }));
+// Exposes the data sent from a form with a method="POST" and
+// poplates the request object, with a key named body
+// with the values inside as an object
+
 app.use(baseRouter);
 app.use(duckRouter);
 

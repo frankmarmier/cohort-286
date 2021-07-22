@@ -21,9 +21,11 @@ router.get("/ducks", (req, res) => {
 });
 
 // router.get("/ducks", (req, res) => {
-//   RubberDuck.find()
-//     .then((rubberDuckDocuments) => {
-//       res.render("ducks/listDuck.hbs", {
+
+//   RubberDuck.find() // find all the ducks in the rubberduck collection
+//     .then((rubberDuckDocuments) => { // query success
+//       res.render("ducks/listDuck.hbs", { // render a view passing the data
+//                                         retrieved from the database
 //         ducks: rubberDuckDocuments,
 //       });
 //     })
@@ -31,6 +33,32 @@ router.get("/ducks", (req, res) => {
 //       console.log(error);
 //     });
 // });
+
+router.get("/ducks/create", (req, res) => {
+  res.render("ducks/formDuck.hbs");
+});
+
+router.post("/ducks", (req, res) => {
+  console.log("hello you are here");
+  //   console.log(req.body);
+
+  req.body.isAvailable = req.body.isAvailable === "on" ? true : false;
+
+  if (req.body.isAvailable === "on") {
+    req.body.isAvailable = true;
+  } else {
+    req.body.isAvailable = false;
+  }
+
+  RubberDuck.create(req.body)
+    .then((createdDocument) => {
+      console.log(createdDocument);
+      res.redirect("/ducks");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 
 router.get("/ducks/:id", (req, res) => {
   const isValid = mongoose.isValidObjectId(req.params.id);
