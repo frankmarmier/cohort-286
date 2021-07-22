@@ -1,10 +1,18 @@
 <h1>List of Rubber ducks</h1>
 
+<form action="/ducks">
+  <label for="search">Search</label>
+  <input name="color" id="search" placeholder="Search a color.." />
+  {{! <input name="brand" />
+  <input name="material" /> }}
+  <button>Search</button>
+</form>
+
 <ul>
   {{#each ducks}}
-
     <li>
-      {{this.job}}
+      <a href="/ducks/{{this._id}}"> {{this.job}}</a>
+
     </li>
   {{/each}}
 </ul>
