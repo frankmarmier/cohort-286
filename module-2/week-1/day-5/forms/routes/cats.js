@@ -63,7 +63,7 @@ router.post("/cats/:id/update", (req, res) => {
 router.get("/cats/:id/update", (req, res) => {
   Cat.findById(req.params.id)
     .then((dbRes) => {
-      res.render("cats/form.hbs", {
+      res.render("cats/updateForm.hbs", {
         cat: dbRes,
       });
     })
