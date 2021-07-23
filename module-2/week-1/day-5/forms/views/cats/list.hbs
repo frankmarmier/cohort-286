@@ -1,0 +1,11 @@
+<h1>Many cats</h1>
+
+<ul>
+  {{#each cats}}
+    <li>
+      <a href="/cats/{{this._id}}">
+        {{this.name}}
+      </a>
+    </li>
+  {{/each}}
+</ul>
