@@ -15,11 +15,10 @@ router.get("/cats", (req, res) => {
 });
 
 router.post("/cats", (req, res) => {
-  console.log(req.body);
   Cat.create(req.body)
     .then((createdCat) => {
-      //   console.log(createdCat);
-      res.redirect("/cats");
+      console.log(createdCat);
+      res.redirect("/cats/" + createdCat._id);
     })
     .catch((error) => {
       console.log(error);
@@ -35,6 +34,38 @@ router.get("/cats/:id", (req, res) => {
     .then((dbRes) => {
       //   res.send(dbRes);
       res.render("cats/oneCat.hbs", { cat: dbRes });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.get("/cats/:catId/delete", (req, res) => {
+  Cat.findByIdAndDelete(req.params.catId)
+    .then(() => {
+      res.redirect("/cats");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.post("/cats/:id/update", (req, res) => {
+  Cat.findByIdAndUpdate(req.params.id, req.body)
+    .then((catDocument) => {
+      res.redirect("/cats/" + catDocument._id);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.get("/cats/:id/update", (req, res) => {
+  Cat.findById(req.params.id)
+    .then((dbRes) => {
+      res.render("cats/form.hbs", {
+        cat: dbRes,
+      });
     })
     .catch((error) => {
       console.log(error);
