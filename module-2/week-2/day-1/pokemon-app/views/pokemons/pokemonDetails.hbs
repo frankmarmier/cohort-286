@@ -1,0 +1,19 @@
+<h1>{{pokemon.name}} details</h1>
+
+<img src="{{pokemon.sprites.back_default}}" alt="{{pokemon.name}}" />
+
+<div>
+  <p>Types</p>
+  <ul>
+    {{#each pokemon.types}}
+      <li>
+        {{../pokemon.name}}
+        is of type
+        {{this.type.name}}
+      </li>
+
+    {{/each}}
+  </ul>
+</div>
+
+<p>{{pokemon.weight}}</p>

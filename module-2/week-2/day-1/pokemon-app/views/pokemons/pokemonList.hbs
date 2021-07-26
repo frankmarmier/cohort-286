@@ -1,0 +1,14 @@
+<h1>Gotta Catch Them All !</h1>
+
+<ul class="container-grid">
+
+  {{#each pokemons}}
+    <li class="grid-item">
+
+      <a href="/pokemons/{{this.name}}">
+        {{this.name}}
+      </a>
+    </li>
+  {{/each}}
+
+</ul>
