@@ -77,6 +77,13 @@ const brother3 = () => {
   });
 };
 
+// async function program3() {
+//   await brother1();
+//   await brother2();
+//   await brother3();
+//   console.log("they have arrived");
+// }
+
 async function program2() {
   try {
     await Promise.all([brother1(), borther2(), brother3()]);
