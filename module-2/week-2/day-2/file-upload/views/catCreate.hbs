@@ -1,0 +1,21 @@
+{{! In order to send a file to a server, you need to specify
+    the enctype value on the form 
+    enctype="multipart/form-data"
+
+    Input needs to be type="file"
+ }}
+
+<form method="POST" action="/cats" enctype="multipart/form-data">
+
+  <div>
+    <label for="">Name</label>
+    <input name="name" type="text" required />
+  </div>
+  <div>
+    <label for="">Picture</label>
+    <input name="picture" type="file" required />
+  </div>
+
+  <button type="submit">Miaou !</button>
+
+</form>
