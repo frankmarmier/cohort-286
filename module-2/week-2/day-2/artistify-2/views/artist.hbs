@@ -1,0 +1,30 @@
+<h1>artist details</h1>
+
+{{name}}
+<p>
+  is a band ?
+  {{isBand}}
+</p>
+
+<h2>TODO
+  <br />
+
+  inside fix the route in
+  <code>"./routes/index.js"</code>
+  in order to display
+  <br />
+  all the styles of an artist !
+</h2>
+<h3>styles</h3>
+
+<ul>
+  {{#each styles}}
+    <li>
+      <p style="background-color: {{this.color}}">this name{{this.name}} </p>
+    </li>
+  {{/each}}
+</ul>
+
+<img src="{{picture}}" alt="{{name}}'s picture" />
+
+<p>{{description}}</p>
