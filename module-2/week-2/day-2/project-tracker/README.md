@@ -1,3 +1,7 @@
+Project can be found here:
+
+https://github.com/frankmarmier/project-tracker
+
 # Application : Project tracker
 
 ---
