@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+
+    <nav>
+
+      {{#if isLoggedIn}}
+        <a href="/users/profile">{{currentUser.userName}}</a>
+
+      {{else}}
+        <a href="/auth/signin">Signin</a>
+        <a href="/auth/signup">Signup</a>
+      {{/if}}
+    </nav>
+
+    {{{body}}}
+  </body>
+</html>

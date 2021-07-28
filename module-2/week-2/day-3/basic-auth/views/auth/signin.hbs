@@ -1,0 +1,18 @@
+<h1>Hello User !</h1>
+
+<form method="POST" action="/auth/signin">
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" value="titi@gmail.com" />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" value="123" />
+  </div>
+  <button>Signin !</button>
+
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+
+</form>

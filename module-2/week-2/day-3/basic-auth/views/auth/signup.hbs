@@ -1,0 +1,22 @@
+<h1>Hello User !</h1>
+
+<form method="POST" action="/auth/signup">
+  <div>
+    <label for="userName">Username</label>
+    <input type="text" id="userName" name="userName" value="foo" />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="toto@gmail.com" />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" value="123" />
+  </div>
+  <button>Signup !</button>
+
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+
+</form>
