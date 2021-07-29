@@ -10,6 +10,7 @@ const session = require("express-session");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const User = require("./models/User");
+const MongoStore = require("connect-mongo");
 const app = express();
 
 // view engine setup
@@ -27,6 +28,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     // cookie: { secure: true },
   })
 );
@@ -52,8 +54,19 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
   console.log(req.session);
+
   next();
 });
+
+// app.use((req, res, next) => {
+//   res.locals.heyy = "foo";
+//   next();
+// });
+
+// app.use((req, res, next) => {
+//   console.log("Res locals", res.locals.heyy);
+//   next();
+// });
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
