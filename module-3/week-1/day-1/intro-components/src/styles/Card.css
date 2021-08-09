@@ -1,0 +1,22 @@
+.Card {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+}
+
+/* .page .title {
+} */
+
+/* 
+<div className="page">
+
+    <h1 className="title">Hello</h1>
+
+    <div className="card">
+
+        <h2 className="card-title">A title</h2>
+
+    </div>
+
+</div> */
