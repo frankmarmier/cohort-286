@@ -1,0 +1,13 @@
+.Card {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.Card.dark {
+  border-color: white;
+}
+
+.Card.light {
+  border-color: black;
+}

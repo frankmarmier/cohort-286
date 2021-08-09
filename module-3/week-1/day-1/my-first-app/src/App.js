@@ -23,6 +23,12 @@ function App() {
     name: "Lola",
     age: 2,
   };
+  const cat2 = {
+    profileImage:
+      "https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    name: "Didi",
+    age: 4,
+  };
 
   const myStyle = {
     backgroundColor: false ? "red" : "dodgerblue",
@@ -104,13 +110,38 @@ function App() {
     profileImage:
       "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     name: "Lola",
-    age: 2,
+    age: 2,   // Formula is 1 cat year = 7 human years
   }; */}
 
+      <h2>Exercise : Display the cat's name / human age and profile</h2>
+
       <div className="card">
-        <img src="" alt="" />
-        <p>Name</p>
-        <p>Human age of the cat </p>
+        <div className="avatar">
+          <img src={cat.profileImage} alt="" />
+        </div>
+        <p className="name">Name: {cat.name}</p>
+        <p className="info">Human age of the cat: {cat.age * 7} </p>
+      </div>
+      <div className="card">
+        <div className="avatar">
+          <img src={cat2.profileImage} alt="" />
+        </div>
+        <p className="name">Name: {cat2.name}</p>
+        <p className="info">Human age of the cat: {cat2.age * 7} </p>
+      </div>
+      <div className="card">
+        <div className="avatar">
+          <img src={cat2.profileImage} alt="" />
+        </div>
+        <p className="name">Name: {cat2.name}</p>
+        <p className="info">Human age of the cat: {cat2.age * 7} </p>
+      </div>
+      <div className="card">
+        <div className="avatar">
+          <img src={cat2.profileImage} alt="" />
+        </div>
+        <p className="name">Name: {cat2.name}</p>
+        <p className="info">Human age of the cat: {cat2.age * 7} </p>
       </div>
     </div>
   );

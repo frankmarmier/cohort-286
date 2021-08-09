@@ -1,0 +1,30 @@
+.CardCat-container {
+  display: flex;
+  align-items: center;
+}
+
+.CardCat-avatar-container {
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.CardCat-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.CardCat-title {
+  font-size: 1.725rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+
+.CardCat-info {
+  font-size: 1.125rem;
+  font-weight: 500;
+}

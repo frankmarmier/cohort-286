@@ -1,5 +1,5 @@
 import CardCat from "./Components/CardCat";
-// import Title from "./Components/Title";
+import Title from "./Components/Title";
 import "./App.css";
 
 function App() {
@@ -17,11 +17,11 @@ function App() {
   return (
     <div className="App">
       {/* <Title text="The text for the title" /> */}
-      {/* <Title>zdhiudhid hziudh</Title>
+      <Title>zdhiudhid hziudh</Title>
       <Title>
         <span>Hello</span>
         <span>World</span>
-      </Title> */}
+      </Title>
       {/* <Card {...jack} /> */}
       <CardCat
         name={jack.name}
