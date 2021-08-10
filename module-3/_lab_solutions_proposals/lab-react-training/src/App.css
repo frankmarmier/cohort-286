@@ -1,0 +1,12 @@
+/* Here we are following the BEM methodology, BEM stands for Blocks, Elements and Modifiers
+      http://getbem.com/introduction/ 
+ */
+
+.App {
+  padding: 20px 40px;
+}
+
+.App__title {
+  margin-bottom: 20px;
+  /* background-color: rgb(255,255,255); */
+}
