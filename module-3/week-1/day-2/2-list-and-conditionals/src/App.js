@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Guards from "./Components/Conditionals/Guards";
+
+import Ternary from "./Components/Conditionals/Ternary";
+import SimpleList from "./Components/SimpleList";
+import StateList from "./Components/StateList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Simple List</h1>
+      <SimpleList />
+      {/* <Ternary value={true} />
+      <Ternary value={false} />
+
+      <Guards value={true} /> */}
+
+      <StateList />
     </div>
   );
 }
