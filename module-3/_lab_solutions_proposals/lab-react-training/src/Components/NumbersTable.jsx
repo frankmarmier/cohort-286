@@ -37,4 +37,4 @@ const NumbersTable = ({ limit }) => {
 //   return <div className="NumbersTable">{cells}</div>;
 // };
 
-// export default NumbersTable;
+export default NumbersTable;

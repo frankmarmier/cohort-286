@@ -10,7 +10,7 @@ import LikeButton from './Components/LikeButton';
 import Carousel from './Components/Carousel';
 import ClickablePicture from './Components/ClickablePicture';
 // import FaceBook from './Components/FaceBook';
-// import NumbersTable from './Components/NumbersTable';
+import NumbersTable from './Components/NumbersTable';
 import Dice from './Components/Dice';
 import RGBColorPicker from './Components/RGBColorPicker';
 import SignupPage from './Components/SignupPage';
@@ -148,7 +148,7 @@ function App() {
 
       <h2 className="App__title">12. NumbersTable</h2>
 
-      {/* <NumbersTable limit={12} /> */}
+      <NumbersTable limit={12} />
 
       <h2 className="App__title">13. FaceBook </h2>
 
