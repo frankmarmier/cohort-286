@@ -1,0 +1,49 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Form__title {
+  margin-bottom: 22px;
+}
+
+.Form__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.Form__field label {
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.Form__field input {
+  padding: 10px 12px;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+}
+
+.Form__field textarea {
+  padding: 10px 12px;
+}
+
+.Form button {
+  padding: 10px 20px;
+  width: max-content;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-left: auto;
+  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.Form button:hover {
+  background-color: white;
+  color: black;
+}

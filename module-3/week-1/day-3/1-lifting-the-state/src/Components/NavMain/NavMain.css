@@ -1,0 +1,24 @@
+.NavMain {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.NavMain .cart {
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.NavMain .cart .trolley {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
