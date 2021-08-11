@@ -82,7 +82,6 @@ class App extends React.Component {
   // Iteration 3 | Sort Contacts By Name And Popularity
 
   sortByName = () => {
-    // Create a different compareFunction based on "field" value
     // this.state.contacts.slice() create a copy of the array (this.state.allContacts)
     this.setState({
       firstVisibleContacts: this.state.firstVisibleContacts
