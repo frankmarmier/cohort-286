@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.Parent {
+  border: 1px solid black;
+  background-color: dodgerblue;
+}
+
+.Child {
+  border: 1px solid black;
+  background-color: fuchsia;
+}
