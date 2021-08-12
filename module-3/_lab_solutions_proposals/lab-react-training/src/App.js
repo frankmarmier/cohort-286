@@ -9,11 +9,13 @@ import DriverCard from './Components/DriverCard';
 import LikeButton from './Components/LikeButton';
 import Carousel from './Components/Carousel';
 import ClickablePicture from './Components/ClickablePicture';
-// import FaceBook from './Components/FaceBook';
+import FaceBook from './Components/FaceBook';
+import FaceBookAdvanced from './Components/FaceBookAdvanced';
 import NumbersTable from './Components/NumbersTable';
 import Dice from './Components/Dice';
 import RGBColorPicker from './Components/RGBColorPicker';
 import SignupPage from './Components/SignupPage';
+
 import './App.css';
 
 function App() {
@@ -152,10 +154,10 @@ function App() {
 
       <h2 className="App__title">13. FaceBook </h2>
 
-      {/* <FaceBook /> */}
+      <FaceBook />
 
       <h2 className="App__title">14. FaceBookAdvanced </h2>
-      {/* <FaceBookAdvanced /> */}
+      <FaceBookAdvanced />
 
       <h2 className="App__title">15. SignupPage </h2>
 
