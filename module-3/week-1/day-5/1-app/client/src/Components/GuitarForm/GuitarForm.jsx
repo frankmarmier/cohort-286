@@ -1,5 +1,8 @@
 import React from "react";
 import "../../Styles/Form.css";
+import FormField from "../../Components/FormField/FormField";
+import Button from "../../Components/Button/Button";
+
 import axios from "axios";
 
 class GuitarForm extends React.Component {
@@ -59,7 +62,7 @@ class GuitarForm extends React.Component {
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
-        <div>
+        {/* <div>
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -68,9 +71,17 @@ class GuitarForm extends React.Component {
             value={this.state.name}
             onChange={this.handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="price">Price</label>
+        </div> */}
+        <FormField label="Name" htmlFor="name">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+        </FormField>
+        <FormField label="Price" htmlFor="price">
           <input
             type="number"
             name="price"
@@ -78,9 +89,9 @@ class GuitarForm extends React.Component {
             value={this.state.price}
             onChange={this.handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="image">Image</label>
+        </FormField>
+
+        <FormField label="Image" htmlFor="image">
           <input
             type="text"
             name="image"
@@ -88,18 +99,18 @@ class GuitarForm extends React.Component {
             value={this.state.image}
             onChange={this.handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="description">Description</label>
+        </FormField>
+
+        <FormField htmlFor="description" label="Description">
           <textarea
             name="description"
             id="description"
             value={this.state.description}
             onChange={this.handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="isAvailable">Available ?</label>
+        </FormField>
+
+        <FormField label="Available" htmlFor="isAvailable">
           <input
             type="checkbox"
             name="isAvailable"
@@ -107,9 +118,9 @@ class GuitarForm extends React.Component {
             value={this.state.isAvailable}
             onChange={this.handleChange}
           />
-        </div>
+        </FormField>
 
-        <button>Submit !</button>
+        <Button>Submit !</Button>
       </form>
     );
   }

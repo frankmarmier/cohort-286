@@ -1,2 +1,30 @@
-.CardGuitar {
+.GuitarCard {
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 200px;
+}
+
+.GuitarCard__info {
+  padding: 10px 12px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(101, 0, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.GuitarCard__price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.GuitarCard__name {
+  font-size: 30px;
+  font-weight: 300;
 }

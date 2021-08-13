@@ -1,0 +1,12 @@
+.Button {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 50%;
+  border: 3px dotted goldenrod;
+  background-color: chartreuse;
+  font-size: 3rem;
+  font-weight: bolder;
+  width: 100%;
+  color: brown;
+}

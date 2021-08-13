@@ -3,7 +3,10 @@
 }
 
 .App__main {
-  min-height: calc(100vh - 70px);
+  max-height: calc(100vh - 70px);
+  max-width: 1200px;
+  margin: auto;
   /* https://stackoverflow.com/questions/8468066/child-inside-parent-with-min-height-100-not-inheriting-height */
-  height: 1px;
+  height: 100vh;
+  padding: 10px 20px;
 }

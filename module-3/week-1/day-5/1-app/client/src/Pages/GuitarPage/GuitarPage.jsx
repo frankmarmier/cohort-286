@@ -1,6 +1,9 @@
 import React from "react";
 import GuitarList from "../../Components/GuitarList/GuitarList";
 import axios from "axios";
+
+import "./GuitarPage.css";
+
 class GuitarPage extends React.Component {
   state = {
     guitars: [],
@@ -24,7 +27,7 @@ class GuitarPage extends React.Component {
   render() {
     return (
       <div className="GuitarPage">
-        <div>Guitars !</div>
+        <h1 className="GuitarPage__title">Check out our latest guitars</h1>
 
         <GuitarList guitars={this.state.guitars} />
       </div>

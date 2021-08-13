@@ -1,4 +1,5 @@
 import GuitarCard from "../GuitarCard/GuitarCard";
+import "./GuitarList.css";
 
 const GuitarList = (props) => {
   const { guitars } = props;

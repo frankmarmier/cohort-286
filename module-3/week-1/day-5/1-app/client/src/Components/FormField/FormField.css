@@ -1,0 +1,54 @@
+.FormField {
+  display: flex;
+  flex-direction: column;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  margin-bottom: 2rem;
+}
+
+.FormField label {
+  font-family: inherit;
+  color: #ff00ff;
+  margin-bottom: 8px;
+  font-size: 3rem;
+}
+
+.FormField:nth-of-type(even) label {
+  color: dodgerblue;
+}
+
+.FormField input,
+.FormField textarea {
+  border: 3px dotted tomato;
+  padding: 10px 12px;
+  font-size: 2rem;
+  font-family: inherit;
+  color: orange;
+}
+
+.FormField input:focus,
+.FormField textarea:focus {
+  outline: 3px dotted chartreuse;
+}
+
+.FormField input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 400px;
+  height: 400px;
+  content: "caca";
+  position: relative;
+}
+.FormField input[type="checkbox"]:not(:checked):after {
+  content: "CLICK HERE";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FormField input[type="checkbox"]:checked {
+  background-image: url("https://i.imgflip.com/5jhl1i.jpg");
+  background-size: contain;
+}
