@@ -10,7 +10,7 @@ class RickAndMorty extends Component {
 
   componentDidMount() {
     axios
-      .get("https://kitsu.io/api/edge/anime")
+      .get("https://rickandmortyapi.com/api/character")
       .then((response) => {
         console.log("this is res", response);
         this.setState({
