@@ -6,6 +6,7 @@ const fugitiveSchema = new Schema({
   lastName: String,
   lastSeen: Date,
   found: Boolean,
+  archived: { type: Boolean, default: false },
   threatLevel: { type: String, enum: ["low", "medium", "high"] },
 });
 

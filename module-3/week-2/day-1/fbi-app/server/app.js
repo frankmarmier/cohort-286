@@ -9,12 +9,24 @@ const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-
+const cors = require("cors");
 const app = express();
 
+app.use(
+  cors({
+    origin: "http://localhost:3000", // allow a single domain
+    // origin: [
+    //   "http://localhost:3000",
+    //   "http://localhost:3001",
+    //   "www.facebook.com",
+    // ], // allow several domains
+    // origin: "*",  // allow any frontend domain to communicate with this API
+  })
+);
+
 app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json()); // reads application/json headers and exposes data @req.body
+app.use(express.urlencoded({ extended: false })); // reads application/x-www-form-urlencoded and exposes data @req.body
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
