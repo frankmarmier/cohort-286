@@ -1,32 +1,37 @@
-import logo from "./logo.svg";
-import "./App.css";
-import axios from "axios";
-function App() {
-  axios
-    .get("http://localhost:4000/api/fugitives")
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+import { Switch, Route } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import WantedPage from "./Pages/WantedPage";
+import NavMain from "./Components/NavMain";
+import DashboardPage from "./Pages/DashboardPage";
+import CreateFugitivePage from "./Pages/CreateFugitivePage";
+import EditFugitivePage from "./Pages/EditFugitivePage";
+import FugitiveFormPage from "./Pages/FugitiveFormPage";
 
+import "./App.css";
+
+function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavMain />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/wanted" component={WantedPage} />
+        <Route exact path="/dashboard" component={DashboardPage} />
+        {/* <Route exact path="/dashboard/create" component={FugitiveFormPage} />
+        <Route exact path="/dashboard/:id/edit" component={FugitiveFormPage} /> */}
+
+        <Route exact path="/dashboard/create">
+          <FugitiveFormPage action="create" />
+        </Route>
+
+        <Route
+          exact
+          path="/dashboard/:id/edit"
+          render={(props) => {
+            return <FugitiveFormPage {...props} action="update" />;
+          }}
+        />
+      </Switch>
     </div>
   );
 }
