@@ -1,0 +1,29 @@
+/* APP */
+
+.App__content {
+  padding: 0 40px;
+}
+
+/* NAVMAIN */
+.NavMain {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: dodgerblue;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.NavMain__nav-list {
+  display: flex;
+}
+
+.NavMain__nav-link.active {
+  color: fuchsia;
+}
+
+.NavMain__nav-item:not(:last-of-type) {
+  margin-right: 15px;
+}

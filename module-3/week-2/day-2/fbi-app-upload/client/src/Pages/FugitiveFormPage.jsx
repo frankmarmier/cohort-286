@@ -1,0 +1,189 @@
+import React from "react";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
+
+class FugitiveFormPage extends React.Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    found: false,
+    picture: "",
+    threatLevel: "",
+    lastSeen: "",
+    errors: {},
+  };
+
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    if (this.props.action === "update") {
+      axios
+        .get("http://localhost:4000/api/fugitives/" + id)
+        .then((apiResponse) => {
+          console.log(apiResponse);
+          const data = apiResponse.data;
+          // this.setState({
+          //   firstName: data.firstName,
+          //   lastName: data.lastName,
+          //   found: data.found,
+          //   picture: data.picture,
+          //   threatLevel: data.threatLevel,
+          //   lastSeen: data.lastSeen,
+          // });
+
+          this.setState({
+            ...data,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
+
+  handleChange = (event) => {
+    const key = event.target.name;
+    const value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.type === "file"
+        ? event.target.files[0]
+        : event.target.value;
+
+    this.setState({
+      [key]: value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    // In order to send some binary data (file / image etc...)
+    // You need to build your own form data
+    // It was handled by the form enctype when dealing with "synchronous"
+    // browser requests (make a request => get a new page => display the new page)
+    // When dealing with AJAX, you need to build the FormData manually
+
+    const fd = new FormData();
+
+    fd.append("picture", this.state.picture);
+    fd.append("firstName", this.state.firstName);
+    fd.append("lastName", this.state.lastName);
+    fd.append("lastSeen", this.state.lastSeen);
+    fd.append("threatLevel", this.state.threatLevel);
+    fd.append("found", this.state.found);
+
+    console.log(fd);
+
+    // const fugitive = {
+    //   picture: this.state.picture,
+    //   firstName: this.state.firstName,
+    //   lastName: this.state.lastName,
+    //   lastSeen: this.state.lastSeen,
+    //   threatLevel: this.state.threatLevel,
+    //   found: this.state.found,
+    // };
+
+    // console.log(fugitive);
+
+    if (this.props.action === "create") {
+      axios
+        .post("http://localhost:4000/api/fugitives", fd)
+        .then((apiResponse) => {
+          console.log(apiResponse);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      const id = this.props.match.params.id;
+
+      axios
+        .patch(`http://localhost:4000/api/fugitives/${id}`, fd)
+        .then((apiResponse) => {
+          console.log(apiResponse);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>Hello {this.props.action === "create" ? "Create" : "Edit"}</h1>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <label htmlFor="firstName">FirstName</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={this.state.firstName}
+              onChange={this.handleChange}
+            />
+            {this.state.errors.firstName && this.state.errors.firstName}
+          </div>
+          <div>
+            <label htmlFor="lastName">Lastname</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={this.state.lastName}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="picture">Picture</label>
+            <input
+              type="file"
+              id="picture"
+              name="picture"
+              // you cannot set a value to an input type file
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="threatLevel">Threat level</label>
+            <select
+              name="threatLevel"
+              id="threatLevel"
+              value={this.state.threatLevel}
+              onChange={this.handleChange}
+            >
+              <option value="-1">Select an option</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="lastSeen">Last seen</label>
+            <input
+              type="date"
+              id="lastSeen"
+              name="lastSeen"
+              value={this.state.lastSeen}
+              onChange={this.handleChange}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="found">Found</label>
+            <input
+              type="checkbox"
+              id="found"
+              name="found"
+              value={this.state.found}
+              onChange={this.handleChange}
+            />
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default withRouter(FugitiveFormPage);
