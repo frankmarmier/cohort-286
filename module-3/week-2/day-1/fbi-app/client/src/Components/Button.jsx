@@ -36,7 +36,3 @@ const Button = (props) => {
 };
 
 export default withRouter(Button);
-
-{
-  /* <button onClick={}></button> */
-}

@@ -15,8 +15,16 @@ import NumbersTable from './Components/NumbersTable';
 import Dice from './Components/Dice';
 import RGBColorPicker from './Components/RGBColorPicker';
 import SignupPage from './Components/SignupPage';
-
+import DevelopersList from './Components/DevelopersList';
 import './App.css';
+
+// prettier-ignore
+const developers = [
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+  { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+  { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+  { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+];
 
 function App() {
   return (

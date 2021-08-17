@@ -11,9 +11,9 @@ const Home = (props) => {
   return (
     <div>
       <h1>Home Page !</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
-      <button onClick={handleClick}>Go to About</button>
-      <Parent history={props.history} />
+      {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
+      {/* <button onClick={handleClick}>Go to About</button> */}
+      {/* <Parent history={props.history} /> */}
     </div>
   );
 };

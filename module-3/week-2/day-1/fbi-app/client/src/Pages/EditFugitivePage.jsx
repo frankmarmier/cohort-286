@@ -7,7 +7,7 @@ class EditFugitivePage extends React.Component {
     lastName: "",
     found: false,
     picture: "",
-    threatLevel: "low",
+    threatLevel: "",
     lastSeen: "",
   };
 

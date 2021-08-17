@@ -8,8 +8,9 @@ class FugitiveFormPage extends React.Component {
     lastName: "",
     found: false,
     picture: "",
-    threatLevel: "low",
+    threatLevel: "",
     lastSeen: "",
+    errors: {},
   };
 
   componentDidMount() {
@@ -53,6 +54,21 @@ class FugitiveFormPage extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+
+    const errors = {};
+
+    for (let key in this.state) {
+      if (this.state[key] === "") {
+        errors[key] = "This field is required !";
+      }
+    }
+
+    if (Object.keys(errors).length) {
+      this.setState({
+        errors,
+      });
+      return;
+    }
 
     const fugitive = {
       picture: this.state.picture,
@@ -99,6 +115,7 @@ class FugitiveFormPage extends React.Component {
               value={this.state.firstName}
               onChange={this.handleChange}
             />
+            {this.state.errors.firstName && this.state.errors.firstName}
           </div>
           <div>
             <label htmlFor="lastName">Lastname</label>
@@ -128,6 +145,7 @@ class FugitiveFormPage extends React.Component {
               value={this.state.threatLevel}
               onChange={this.handleChange}
             >
+              <option value="-1">Select an option</option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
               <option value="high">High</option>
