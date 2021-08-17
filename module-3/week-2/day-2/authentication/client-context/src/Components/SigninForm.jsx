@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withAuth } from "../Store/AuthProvider";
 import axios from "axios";
 
 class SigninForm extends Component {
@@ -29,7 +30,7 @@ class SigninForm extends Component {
         withCredentials: true,
       })
       .then((apiResponse) => {
-        this.props.onSubmit(apiResponse.data);
+        this.props.context.setUser(apiResponse.data);
       })
       .catch((error) => {
         console.log(error);
@@ -37,6 +38,7 @@ class SigninForm extends Component {
   };
 
   render() {
+    // console.log("In signin form", this.props);
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Welcome back !</h2>
@@ -66,4 +68,4 @@ class SigninForm extends Component {
   }
 }
 
-export default SigninForm;
+export default withAuth(SigninForm);
