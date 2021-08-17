@@ -1,0 +1,18 @@
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: ghostwhite;
+}
+
+.App > div {
+  height: 400px;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.App div > div {
+  border: 1px solid black;
+  height: 99%;
+  padding: 20px;
+  background-color: ghostwhite;
+}
