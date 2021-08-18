@@ -19,6 +19,28 @@ class AutocompletePlace extends Component {
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
+  /**
+   * In order to handle a "default" value for this AutoComplete component,
+   * we can IN a lifecycle, set the props as state
+   * We need to handle it in both componentDidMount && componentDidUpdate
+   *
+   */
+  componentDidMount() {
+    if (this.props.value) {
+      this.setState({
+        search: this.props.value,
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      this.setState({
+        search: this.props.value,
+      });
+    }
+  }
+
   handleSearchChange(e) {
     this.setState({
       search: e.target.value,
@@ -71,7 +93,7 @@ class AutocompletePlace extends Component {
         <input
           className="input"
           type="text"
-          value={this.props.defaultValue || this.state.search}
+          value={this.state.search}
           onChange={this.handleSearchChange}
           placeholder="Type an address"
         />

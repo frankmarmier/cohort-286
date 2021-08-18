@@ -32,6 +32,8 @@ class Home extends React.Component {
   render() {
     const { user } = this.props.context;
 
+    console.log(this.state.items);
+
     return (
       <React.Fragment>
         {user && this.props.displayForm && (

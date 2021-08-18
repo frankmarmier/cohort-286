@@ -114,6 +114,7 @@ router.patch(
 // 403 : Creator id doesn't match the session user id
 // 204 : Successful
 // 500 : error
+
 router.delete("/:id", requireAuth, validateId("id"), (req, res, next) => {
   Item.findById(req.params.id)
     .then((itemDocument) => {

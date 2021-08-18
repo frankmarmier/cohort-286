@@ -16,6 +16,18 @@ class ItemEditForm extends Component {
 
   formRef = React.createRef();
 
+  static getDerivedStateFromProps(props, state) {
+    console.log(props, "this is props");
+    if (props.item._id !== state._id) {
+      return {
+        ...state,
+        ...props.item,
+      };
+    } else {
+      return state;
+    }
+  }
+
   handleChange = (event) => {
     const value =
       event.target.type === "file" ? event.target.files[0] : event.target.value;
@@ -70,9 +82,6 @@ class ItemEditForm extends Component {
   render() {
     const { httpResponse } = this.state;
 
-    const { name, category, quantity, location, description, contact } =
-      this.props.item;
-
     return (
       <div className="ItemForm-container">
         <form
@@ -100,7 +109,7 @@ class ItemEditForm extends Component {
               placeholder="What are you giving away ?"
               name="name"
               onChange={this.handleChange}
-              value={name || ""}
+              value={this.state.name || ""}
             />
           </div>
           <div className="form-group">
@@ -110,7 +119,7 @@ class ItemEditForm extends Component {
             <select
               name="category"
               id="category"
-              value={category[0] || ""}
+              value={(this.state.category && this.state.category[0]) || ""}
               onChange={this.handleChange}
             >
               <option value="Plant">Plant</option>
@@ -128,15 +137,16 @@ class ItemEditForm extends Component {
               type="number"
               name="quantity"
               onChange={this.handleChange}
-              value={quantity || ""}
+              value={this.state.quantity || ""}
             />
           </div>
           <div className="form-group">
             <label className="label" htmlFor="location">
               Address
             </label>
+
             <AutoComplete
-              defaultValue={location.formattedAddress}
+              value={this.state.formattedAddress}
               onSelect={this.handlePlace}
             />
           </div>
@@ -150,7 +160,7 @@ class ItemEditForm extends Component {
               className="text-area"
               placeholder="Tell us something about this item"
               onChange={this.handleChange}
-              value={description || ""}
+              value={this.state.description || ""}
             ></textarea>
           </div>
 
@@ -171,7 +181,8 @@ class ItemEditForm extends Component {
                 type="radio"
                 name="contact"
                 onChange={this.handleChange}
-                value={this.props.context.user.email || ""}
+                value="email"
+                checked={this.state.contact === "email"}
               />
               {this.props.context.user.email}
             </div>
@@ -181,8 +192,10 @@ class ItemEditForm extends Component {
                   type="radio"
                   name="contact"
                   onChange={this.handleChange}
-                  checked={contact === this.props.context.user.phoneNumber}
-                  value={this.props.context.user.phoneNumber}
+                  checked={
+                    this.state.contact === this.props.context.user.phoneNumber
+                  }
+                  value="phone"
                 />
                 {this.props.context.user.phoneNumber}
               </div>
